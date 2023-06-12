@@ -1,0 +1,11 @@
+
+===check user online
+https://www.golinuxcloud.com/check-user-online-or-offline-on-laravel/
+
+===== when cannot push to github 
+after generate new token
+git remote set-url origin https://<token>@github.com/<username>/<repo>
+
+
+===== emoji
+https://emojipedia.org/

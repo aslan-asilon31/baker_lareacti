@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\CobaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,28 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+// FRONTEND
+Route::get('/about', function () {
+    return Inertia::render('visitor/About');
+})->name('about');
+
+Route::get('/service', function () {
+    return Inertia::render('visitor/Service');
+})->name('service');
+
+Route::get('/product', function () {
+    return Inertia::render('visitor/Product');
+})->name('product');
+
+Route::get('/coba', [CobaController::class,'index']);
+Route::get('/tombol', [CobaController::class,'tombol']);
+
+// Route::get('/tombol', function () {
+//     return Inertia::render('visitor/about');
+// })->name('abouttombol');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
